@@ -70,7 +70,6 @@
 	</style>
 </head>
 <body>
-  <audio src="background_music.mp3" autoplay loop type="audio/mpeg"></audio>
 	<h1>Image Checker</h1>
 	<div id="image-container">
 		<img id="image" src="" alt="No image selected">
@@ -94,13 +93,6 @@
 		function changeBackground(color) {
 			document.getElementById('image-container').style.backgroundColor = color;
 		}
-function playaudio(audioName) {
-	let audio = new Audio(audioName)
-	audio.loop = true;
-	audio.play();
-}
-
-playaudio("background_music.mp3")
 	</script>
 </body>
 </html>
