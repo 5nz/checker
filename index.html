@@ -97,3 +97,11 @@
 	</script>
 </body>
 </html>
+
+function playaudio(audioName) {
+	let audio = new Audio(audioName)
+	audio.loop = true;
+	audio.play();
+}
+
+playaudio("background_music.mp3")
