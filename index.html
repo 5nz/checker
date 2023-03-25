@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Checker</title>
+	<style>
+		body {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		img {
+			max-width: 90%;
+			height: auto;
+			margin: 20px;
+			border: 2px solid black;
+		}
+		.white {
+			background-color: cyan;
+			border-radius: 50%;
+			padding: 10px 20px;
+			transition: transform 0.2s;
+			margin-right: 10px;
+			font-weight: bold;
+		}
+		.black {
+			background-color: cyan;
+			border-radius: 50%;
+			padding: 10px 20px;
+			transition: transform 0.2s;
+			margin-left: 10px;
+			font-weight: bold;
+		}
+		.white:hover {
+			transform: translateX(-10px);
+		}
+		.black:hover {
+			transform: translateX(10px);
+		}
+		.square {
+			background-color: #7289da;
+			border-radius: 5px;
+			padding: 10px 20px;
+			margin: 20px;
+			display: inline-block;
+			transition: transform 0.2s;
+			font-weight: bold;
+			color: white;
+			cursor: pointer;
+		}
+		.square:hover {
+			transform: scale(1.1);
+		}
+		.button-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-top: 20px;
+		}
+		.right-corner {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 20px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<audio src="audio.ogg" autoplay loop></audio>
+	<h1>Image Checker</h1>
+	<div id="image-container">
+		<img id="image" src="" alt="No image selected">
+	</div>
+	<div class="button-container">
+		<button class="square" onclick="changeBackground('white')">White</button>
+		<button class="square" onclick="changeBackground('black')">Black</button>
+	</div>
+	<input type="file" accept="image/*" onchange="loadImage(event)">
+	<div class="right-corner">
+		<a href="https://github.com/5nz" target="_blank"><div class="square">Github</div></a>
+		<a href="https://discord.gg/A7UcxMb39z" target="_blank"><div class="square">Discord</div></a>
+	</div>
+	<script>
+		function loadImage(event) {
+			var image = document.getElementById('image');
+			image.src = URL.createObjectURL(event.target.files[0]);
+			document.getElementById('image-container').style.backgroundColor = 'white';
+		}
+		
+		function changeBackground(color) {
+			document.getElementById('image-container').style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>
